@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healing Tabernacle | Home</title>
+<meta name="description" content="Healing Tabernacle — a place of healing, hope and worship. Join us for Sunday service, Bible study, and community outreach.">
+<!-- Open Graph / social sharing — CHANGE OG IMAGE URL HERE once the site is live -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Healing Tabernacle">
+<meta property="og:title" content="Healing Tabernacle | Home">
+<meta property="og:description" content="A place of healing, hope and worship. Join us for Sunday service, Bible study, and community outreach.">
+<meta property="og:image" content="assets/images/hero.jpg">
+<meta property="og:url" content="https://www.healingtabernacle.org/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo/favicon.png">
+<!-- Church structured data (SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Church",
+  "name": "Healing Tabernacle",
+  "url": "https://www.healingtabernacle.org/",
+  "logo": "assets/logo/church-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "14 Faith Avenue",
+    "addressLocality": "Ikeja, Lagos",
+    "addressCountry": "NG"
+  },
+  "telephone": "+234 803 000 0000",
+  "sameAs": []
+}
+</script>
+
+<!-- CHANGE FONTS HERE — swap these Google Font links + the --font-display / --font-body variables in css/style.css -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- ============================= HERO ============================= -->
+<section class="hero">
+  <div class="hero-media">
+    <!-- CHANGE HERO VIDEO HERE — replace assets/videos/hero-video.mp4 -->
+    <!-- If you'd rather use a static image, delete the <video> tag and use:
+         <img src="assets/images/hero.jpg" alt="Healing Tabernacle congregation worshipping"> -->
+    <video autoplay muted loop playsinline poster="assets/images/hero.jpg">
+      <source src="assets/videos/hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="container hero-content">
+    <span class="eyebrow">Welcome Home</span>
+    <h1>A Place of Healing, Hope &amp; Worship</h1>
+    <p>Healing Tabernacle is a family of believers reaching Lagos and beyond with the love of Christ. Wherever you are on your journey, there's a seat for you here.</p>
+    <div class="hero-actions">
+      <a href="events.html" class="btn btn-primary">Plan Your Visit</a>
+      <a href="livestream.html" class="btn btn-outline">Watch Online</a>
+    </div>
+    <div class="hero-service-times" id="service-times-list">
+      <!-- Filled automatically from CONFIG.serviceTimes in js/config.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================= WELCOME / ABOUT TEASER ============================= -->
+<section class="section">
+  <div class="container leader-section">
+    <div class="reveal">
+      <!-- CHANGE PASTOR IMAGE HERE — replace assets/images/pastor.jpg (also set in js/config.js -> CONFIG.pastor.image) -->
+      <div class="arch-frame">
+        <img src="assets/images/pastor.jpg" alt="Pastor Samuel Okafor of Healing Tabernacle" data-config="pastor.image">
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">A Word From Our Pastor</span>
+      <h2 data-config="pastor.name">Pastor Samuel Okafor</h2>
+      <p data-config="pastor.bio">Pastor Samuel has led Healing Tabernacle for over 15 years...</p>
+      <p class="leader-signature" data-config="pastor.quote">"Healing is not just our name — it is our mission."</p>
+      <a href="about.html" class="btn btn-outline on-light mt-lg">Meet Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= TODAY'S WORD ============================= -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-heading center reveal">
+      <span class="eyebrow">Daily Word</span>
+      <h2>Today's Word</h2>
+    </div>
+    <div class="daily-word-card reveal" id="daily-word" style="max-width:720px;margin:0 auto;">
+      <span class="dw-date"></span>
+      <p class="dw-verse"></p>
+      <span class="dw-reference"></span>
+      <p class="dw-message"></p>
+      <a href="#" class="dw-share" target="_blank" rel="noopener">📲 Share to WhatsApp</a>
+    </div>
+    <div class="text-center mt-lg"><a href="daily-word.html" class="btn btn-outline on-light">Read Past Devotionals</a></div>
+  </div>
+</section>
+
+<!-- ============================= THIS WEEK AT HEALING TABERNACLE ============================= -->
+<section class="section">
+  <div class="container" style="max-width:760px;">
+    <div class="section-heading center reveal">
+      <span class="eyebrow">Stay In The Loop</span>
+      <h2>This Week At Healing Tabernacle</h2>
+    </div>
+    <div id="announcements-list" class="reveal"></div>
+  </div>
+</section>
+
+<!-- ============================= WHAT TO EXPECT / VALUES ============================= -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-heading center reveal">
+      <span class="eyebrow">Why Visit Us</span>
+      <h2>What You Can Expect</h2>
+      <p>Every service is designed to help you encounter God, connect with genuine community, and grow in your walk of faith.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card value-card reveal">
+        <div class="ministry-icon">✟</div>
+        <h3>Spirit-Filled Worship</h3>
+        <p>Sing, pray and encounter God through our live worship team every service.</p>
+      </div>
+      <div class="card value-card reveal">
+        <div class="ministry-icon">✚</div>
+        <h3>Healing &amp; Prayer</h3>
+        <p>Our prayer ministers are available after every service for personal prayer.</p>
+      </div>
+      <div class="card value-card reveal">
+        <div class="ministry-icon">✜</div>
+        <h3>Real Community</h3>
+        <p>Join a small group and build lasting friendships that walk with you through life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= UPCOMING EVENTS TEASER ============================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Stay Connected</span>
+      <h2>Upcoming Events</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <div class="card-media">
+          <!-- CHANGE IMAGE HERE — assets/images/gallery-1.jpg -->
+          <img src="assets/images/gallery-1.jpg" alt="Sunday Worship Service">
+        </div>
+        <div class="card-body">
+          <span class="card-date">Sun, Aug 16 · 8:00 & 10:30 AM</span>
+          <h3>Sunday Worship Service</h3>
+          <p>Join us for a powerful time of worship, the Word and community.</p>
+          <a href="events.html" class="card-link">View Details →</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-media">
+          <!-- CHANGE IMAGE HERE — assets/images/gallery-5.jpg -->
+          <img src="assets/images/gallery-5.jpg" alt="Youth Revival Night">
+        </div>
+        <div class="card-body">
+          <span class="card-date">Sat, Aug 22 · 5:00 PM</span>
+          <h3>Youth Revival Night</h3>
+          <p>A night dedicated to igniting faith in our young people.</p>
+          <a href="events.html" class="card-link">View Details →</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-media">
+          <!-- CHANGE IMAGE HERE — assets/images/gallery-6.jpg -->
+          <img src="assets/images/gallery-6.jpg" alt="Community Outreach">
+        </div>
+        <div class="card-body">
+          <span class="card-date">Sat, Aug 29 · 9:00 AM</span>
+          <h3>Community Food Outreach</h3>
+          <p>Serving families in our neighbourhood with food and prayer.</p>
+          <a href="events.html" class="card-link">View Details →</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-lg"><a href="events.html" class="btn btn-outline on-light">See All Events</a></div>
+  </div>
+</section>
+
+<!-- ============================= SCRIPTURE / QUOTE BAND ============================= -->
+<section class="section section--dark">
+  <div class="container quote-block reveal">
+    <p>"He heals the brokenhearted and binds up their wounds."</p>
+    <span>Psalm 147:3</span>
+  </div>
+</section>
+
+<!-- ============================= LATEST SERMON TEASER ============================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Catch Up</span>
+      <h2>Latest Message</h2>
+    </div>
+    <div class="card sermon-card reveal">
+      <div class="card-media">
+        <!-- CHANGE SERMON THUMBNAIL HERE — assets/images/sermon-1.jpg -->
+        <img src="assets/images/sermon-1.jpg" alt="Walking in Divine Healing sermon thumbnail">
+        <div class="play-badge"><span>▶</span></div>
+      </div>
+      <div class="card-body">
+        <span class="card-date">Aug 2, 2026 · Pastor Samuel Okafor</span>
+        <h3>Walking in Divine Healing</h3>
+        <p>A message on faith, healing, and restoration for every area of your life.</p>
+        <a href="sermons.html" class="card-link">Watch Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= GIVING / CTA ============================= -->
+<section class="section section--alt">
+  <div class="container text-center reveal">
+    <span class="eyebrow">Partner With Us</span>
+    <h2>Sow Into What God Is Doing Here</h2>
+    <p style="max-width:600px;margin:14px auto 30px;">Your generosity helps us reach more families, run our outreach programs, and keep the doors of Healing Tabernacle open to everyone.</p>
+    <a href="give.html" class="btn btn-primary">Give Online</a>
+  </div>
+</section>
+
+<!-- ============================= TESTIMONIES TEASER ============================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-heading center reveal">
+      <span class="eyebrow">Changed Lives</span>
+      <h2>Stories Of Healing &amp; Breakthrough</h2>
+    </div>
+    <div class="text-center reveal">
+      <p style="max-width:560px;margin:0 auto 24px;">Read how God has moved in the lives of our church family — or share your own story.</p>
+      <a href="testimonies.html" class="btn btn-outline on-light">Read Testimonies</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= PLAN YOUR VISIT TEASER ============================= -->
+<section class="section section--dark">
+  <div class="container text-center reveal">
+    <span class="eyebrow">First Time Visiting?</span>
+    <h2>Plan Your Visit</h2>
+    <p style="max-width:560px;margin:14px auto 30px;">Service times, parking, what to expect and how to find us — everything you need for your first Sunday.</p>
+    <a href="visit.html" class="btn btn-primary">Plan Your Visit</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

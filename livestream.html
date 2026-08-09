@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livestream | Healing Tabernacle</title>
+<meta name="description" content="Watch Healing Tabernacle live, wherever you are.">
+<link rel="icon" href="assets/logo/favicon.png">
+<!-- CHANGE FONTS HERE -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Join Us Online</span>
+    <h1>Watch Live</h1>
+    <p id="livestream-status" class="livestream-status" style="margin-top:16px;"></p>
+    <a href="#livestream-player" class="btn btn-primary" style="margin-top:18px;">▶ Watch Live</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <!--
+      CHANGE LIVESTREAM VIDEO HERE — set CONFIG.liveStreamEmbedUrl in
+      js/config.js. Set CONFIG.liveStreamIsLive to true/false to control
+      the "LIVE NOW" / "OFFLINE" badge above.
+    -->
+    <div class="video-frame reveal" id="livestream-player">
+      <iframe id="livestream-frame" src="https://www.youtube.com/embed/live_stream?channel=REPLACE_WITH_CHANNEL_ID" title="Healing Tabernacle Livestream" allowfullscreen></iframe>
+    </div>
+    <p class="form-note text-center mt-lg">Can't see the stream? Watch directly on our <a href="#" data-config="social.youtube" data-config-href style="color:var(--color-primary);font-weight:700;">YouTube channel</a> instead.</p>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container text-center reveal">
+    <span class="eyebrow">Service Times</span>
+    <h2>When We Go Live</h2>
+    <div class="hero-service-times on-light" id="service-times-list" style="justify-content:center;border:0;margin-top:20px;padding-top:0;">
+      <!-- Filled automatically from CONFIG.serviceTimes in js/config.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================= PREVIOUS LIVESTREAMS ============================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-heading center reveal">
+      <span class="eyebrow">Missed A Service?</span>
+      <h2>Previous Livestreams</h2>
+    </div>
+    <!-- CHANGE PAST LIVESTREAM LINKS HERE — swap each href for the YouTube video URL -->
+    <div class="grid grid-3">
+      <a href="sermons.html" class="card reveal" style="display:block;text-decoration:none;color:inherit;">
+        <div class="card-media"><img src="assets/images/sermon-1.jpg" alt="Walking in Divine Healing"><div class="play-badge"><span>▶</span></div></div>
+        <div class="card-body"><span class="card-date">Aug 2, 2026</span><h3>Walking in Divine Healing</h3></div>
+      </a>
+      <a href="sermons.html" class="card reveal" style="display:block;text-decoration:none;color:inherit;">
+        <div class="card-media"><img src="assets/images/sermon-2.jpg" alt="Faith Over Fear"><div class="play-badge"><span>▶</span></div></div>
+        <div class="card-body"><span class="card-date">Jul 26, 2026</span><h3>Faith Over Fear</h3></div>
+      </a>
+      <a href="sermons.html" class="card reveal" style="display:block;text-decoration:none;color:inherit;">
+        <div class="card-media"><img src="assets/images/sermon-3.jpg" alt="The Power of Community"><div class="play-badge"><span>▶</span></div></div>
+        <div class="card-body"><span class="card-date">Jul 19, 2026</span><h3>The Power of Community</h3></div>
+      </a>
+    </div>
+    <div class="text-center mt-lg"><a href="sermons.html" class="btn btn-outline on-light">View Full Sermon Library</a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Load the livestream URL from CONFIG once it's available
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("livestream-frame").src = CONFIG.liveStreamEmbedUrl;
+  });
+</script>
+</body>
+</html>

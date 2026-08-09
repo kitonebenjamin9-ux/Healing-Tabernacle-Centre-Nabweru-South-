@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonies | Healing Tabernacle</title>
+<meta name="description" content="Read testimonies of healing, breakthrough and transformation from the Healing Tabernacle family.">
+<link rel="icon" href="assets/logo/favicon.png">
+<!-- CHANGE FONTS HERE -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Testimonies</span>
+    <h1>Stories Of Healing &amp; Breakthrough</h1>
+    <p>Tap any testimony below to read the full story.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px;">
+
+    <!-- CHANGE TESTIMONY TEXT HERE — add/replace real member testimonies -->
+    <div class="accordion-item reveal">
+      <button class="accordion-trigger">
+        <span>A Journey Of Physical Healing</span>
+        <span class="plus">+</span>
+      </button>
+      <div class="accordion-panel">
+        <div class="accordion-panel-inner">
+          <p>After months of prayer and standing on God's word with the Healing Tabernacle family, I experienced complete healing. The prayer team walked with me every step, and I'm forever grateful for this church's faith and support.</p>
+          <p style="margin-top:8px;font-weight:700;color:var(--color-primary);">— A Member Of Healing Tabernacle</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item reveal">
+      <button class="accordion-trigger">
+        <span>Restored Marriage &amp; Family</span>
+        <span class="plus">+</span>
+      </button>
+      <div class="accordion-panel">
+        <div class="accordion-panel-inner">
+          <p>Our marriage was on the brink, but through the counsel and prayer of our pastors and the men's and women's fellowships, God restored our home. We're grateful for a church that fights for families.</p>
+          <p style="margin-top:8px;font-weight:700;color:var(--color-primary);">— A Member Of Healing Tabernacle</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item reveal">
+      <button class="accordion-trigger">
+        <span>Financial Breakthrough</span>
+        <span class="plus">+</span>
+      </button>
+      <div class="accordion-panel">
+        <div class="accordion-panel-inner">
+          <p>After committing to faithful giving and trusting God with my finances, doors opened that I never expected. This church taught me what it means to sow in faith.</p>
+          <p style="margin-top:8px;font-weight:700;color:var(--color-primary);">— A Member Of Healing Tabernacle</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container" style="max-width:640px;">
+    <div class="section-heading center reveal">
+      <span class="eyebrow">Share What God Has Done</span>
+      <h2>Submit Your Testimony</h2>
+      <p>Testimonies are reviewed by our team before being featured publicly.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-body" style="padding:32px 28px;">
+        <form id="testimony-form" novalidate>
+          <input type="text" name="website" id="hp-field" style="position:absolute;left:-9999px;" tabindex="-1" autocomplete="off">
+          <div class="form-group">
+            <label for="t-name">Your Name</label>
+            <input type="text" id="t-name" required>
+          </div>
+          <div class="form-group">
+            <label for="t-story">Your Testimony</label>
+            <textarea id="t-story" rows="6" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="t-video">Video Link (optional — YouTube/Facebook/etc.)</label>
+            <input type="url" id="t-video" placeholder="https://">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Submit Testimony</button>
+        </form>
+        <p id="testimony-alert" class="form-note" style="text-align:center;margin-top:16px;"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container text-center reveal">
+    <span class="eyebrow">Prefer To Talk?</span>
+    <h2>Share With Our Team Directly</h2>
+    <p style="max-width:560px;margin:14px auto 30px;">We'd love to hear how God has moved in your life.</p>
+    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/testimonies.js"></script>
+<script>
+/* Front-end demo only — no backend attached yet. To go live, connect this
+   to Firestore (collection "testimonies") the same way js/prayer.js writes
+   to "prayerRequests", then approve entries from the admin panel. */
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("testimony-form");
+  var alertBox = document.getElementById("testimony-alert");
+  if (!form) return;
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var honeypot = document.getElementById("hp-field");
+    if (honeypot && honeypot.value) { form.reset(); return; }
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    var btn = form.querySelector("button[type=submit]");
+    btn.disabled = true;
+    btn.textContent = "Submitting...";
+    setTimeout(function () {
+      alertBox.textContent = "Thank you for sharing! Your testimony will be reviewed before it's featured.";
+      alertBox.style.color = "var(--color-success)";
+      form.reset();
+      btn.disabled = false;
+      btn.textContent = "Submit Testimony";
+    }, 900);
+  });
+});
+</script>
+</body>
+</html>
